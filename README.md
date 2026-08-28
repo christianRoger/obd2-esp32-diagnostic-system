@@ -15,6 +15,39 @@ L'obiettivo è sviluppare uno strumento in grado di **acquisire e visualizzare p
 
 ---
 
+## Repository Structure
+
+The repository is organized to separate project documentation, hardware and software architecture, technical examples and interface resources.
+
+```text
+obd2-esp32-diagnostic-system/
+│
+├── README.md
+├── LICENSE
+├── Hardware & Connections.md
+├── Software Architecture.md
+│
+├── examples/
+│   ├── CAN_Communication_Example.cpp
+│   ├── OBD2_Request_Example.cpp
+│   └── DTC_Decoding_Example.cpp
+│
+└── images/
+    ├── dashboard-01.jpg
+    ├── dashboard-02.jpg
+    ├── dashboard-auto.jpg
+    ├── settings-01.jpg
+    ├── settings-02.jpg
+    ├── simulation-mode.jpg
+    ├── can-monitor-01.jpg
+    ├── can-monitor-02.jpg
+    └── diagnostic-report.jpg
+```
+
+The complete firmware source code is not included in the public repository. Selected technical examples are provided to demonstrate the main communication and diagnostic concepts implemented by the system.
+
+---
+
 ## Caratteristiche principali
 
 * Diagnostica automotive tramite OBD-II
