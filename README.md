@@ -271,3 +271,37 @@ L'obiettivo è continuare a sviluppare la piattaforma aggiungendo nuove funziona
 ## Tecnologie
 
 **ESP32 · C/C++ · Embedded Systems · Firmware · CAN Bus · OBD-II · ISO-TP · TWAI · TFT Touchscreen · microSD · Wi-Fi · HTML · CSS · JavaScript · REST API · Automotive Electronics**
+
+---
+
+## 📸 Interfaccia del sistema
+
+### Dashboard
+
+![Dashboard principale](images/dashboard-01.jpg)
+
+![Dashboard telemetria](images/dashboard-02.jpg)
+
+### Selezione veicolo
+
+![Selezione veicolo](images/dashboard-auto.jpg)
+
+### Impostazioni
+
+![Impostazioni](images/settings-01.jpg)
+
+![Impostazioni avanzate](images/settings-02.jpg)
+
+### Modalità simulazione
+
+![Modalità simulazione](images/simulation-mode.jpg)
+
+### CAN Monitor
+
+![CAN Monitor](images/can-monitor-01.jpg)
+
+![CAN Monitor - Network Scan](images/can-monitor-02.jpg)
+
+### Report diagnostico
+
+![Report diagnostico](images/diagnostic-report.jpg)
