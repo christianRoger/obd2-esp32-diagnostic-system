@@ -6,7 +6,7 @@
  * Demonstrates:
  * - Decoding two-byte OBD-II DTC data
  * - Identifying the DTC category
- * - Converting raw CAN data into a readable DTC code
+ * - Converting raw diagnostic bytes into a readable DTC code
  *
  * This is a simplified example for educational and
  * portfolio purposes.
@@ -14,20 +14,24 @@
 
 #include <Arduino.h>
 
+// -----------------------------------------------------------------------------
+// DTC Decoding
+// -----------------------------------------------------------------------------
+
 String decodeDTC(uint8_t byteA, uint8_t byteB)
 {
     const char prefixes[] = {'P', 'C', 'B', 'U'};
 
-    // First two bits identify the DTC category
+    // The two most significant bits identify the DTC category.
     uint8_t category = (byteA >> 6) & 0x03;
 
-    // Remaining bits form the first DTC digit
+    // Bits 5-4 contain the first numerical digit.
     uint8_t digit1 = (byteA >> 4) & 0x03;
 
-    // Lower four bits form the second digit
+    // Lower four bits contain the second hexadecimal digit.
     uint8_t digit2 = byteA & 0x0F;
 
-    // Second byte contains the last two hexadecimal digits
+    // The second byte contains the remaining two hexadecimal digits.
     uint8_t digit3 = (byteB >> 4) & 0x0F;
     uint8_t digit4 = byteB & 0x0F;
 
@@ -44,13 +48,35 @@ String decodeDTC(uint8_t byteA, uint8_t byteB)
     return dtc;
 }
 
+// -----------------------------------------------------------------------------
+// DTC Display
+// -----------------------------------------------------------------------------
+
 void printDTC(uint8_t byteA, uint8_t byteB)
 {
     String dtc = decodeDTC(byteA, byteB);
 
+    Serial.print("Raw data: 0x");
+
+    if (byteA < 0x10)
+        Serial.print("0");
+
+    Serial.print(byteA, HEX);
+
+    Serial.print(" 0x");
+
+    if (byteB < 0x10)
+        Serial.print("0");
+
+    Serial.println(byteB, HEX);
+
     Serial.print("Decoded DTC: ");
     Serial.println(dtc);
 }
+
+// -----------------------------------------------------------------------------
+// Arduino Setup
+// -----------------------------------------------------------------------------
 
 void setup()
 {
@@ -59,24 +85,29 @@ void setup()
     delay(1000);
 
     Serial.println();
+    Serial.println("==============================");
     Serial.println("OBD-II DTC Decoding Example");
+    Serial.println("==============================");
 
     /*
-     * Example raw DTC data.
+     * Example raw diagnostic bytes.
      *
-     * In a real diagnostic system, these bytes would
-     * come from an OBD-II diagnostic response.
+     * In a real diagnostic system, these bytes would be
+     * extracted from an OBD-II diagnostic response.
      */
 
-    uint8_t byteA = 0x01;
-    uint8_t byteB = 0x00;
+    const uint8_t byteA = 0x01;
+    const uint8_t byteB = 0x00;
 
     printDTC(byteA, byteB);
 }
 
+// -----------------------------------------------------------------------------
+// Arduino Main Loop
+// -----------------------------------------------------------------------------
+
 void loop()
 {
-    // Example runs once during setup.
+    // This example performs the decoding once during setup.
 }
 ```
-
