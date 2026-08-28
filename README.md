@@ -331,4 +331,4 @@ Il progetto è in continua evoluzione, con futuri sviluppi orientati all'ampliam
 
 **Christian Roger**
 
-Embedded Systems · Elettronica · Diagnostica Automotive · ESP32 · CAN Bus · Sviluppo Firmware
+Embedded Systems · Elettronica · Diagnostica Automotive · ESP32 · CAN Bus · Sviluppo Firmware 
