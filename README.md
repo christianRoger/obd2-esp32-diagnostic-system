@@ -1,12 +1,17 @@
 # Sistema di Diagnostica OBD-II – ESP32
 
+> **Embedded Automotive Diagnostics · ESP32 · CAN Bus · OBD-II · ISO-TP · C/C++**
+
+Sistema embedded per la **diagnostica automotive**, il monitoraggio del **CAN Bus** e l'analisi dei dati diagnostici del veicolo.
+
 ## Panoramica
 
 **Sistema portatile di diagnostica elettronica automotive sviluppato su piattaforma ESP32**, progettato per l'interfacciamento diretto con il veicolo tramite **CAN Bus / OBD-II**.
 
-Il progetto integra hardware, firmware embedded, comunicazione CAN, gestione di database, interfaccia touchscreen e Web Interface in un'unica piattaforma.
+Il progetto integra **hardware, firmware embedded, comunicazione CAN, gestione di database, interfaccia touchscreen e Web Interface** in un'unica piattaforma.
 
-L'obiettivo è realizzare uno strumento in grado di acquisire e visualizzare i principali parametri diagnostici del veicolo, leggere e interpretare i codici di errore e fornire strumenti dedicati all'analisi e al monitoraggio del bus CAN.
+L'obiettivo è sviluppare uno strumento in grado di **acquisire e visualizzare parametri diagnostici del veicolo, leggere e interpretare i codici di errore (DTC) e fornire strumenti dedicati all'analisi e al monitoraggio del CAN Bus**.
+
 
 ---
 
