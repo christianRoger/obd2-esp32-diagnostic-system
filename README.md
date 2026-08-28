@@ -230,6 +230,31 @@ Il sistema è stato assemblato e testato come prototipo funzionante su banco.
 
 ---
 
+## Esempi tecnici
+
+Sono disponibili alcuni esempi selezionati in **C/C++** che illustrano i principali concetti tecnici implementati nella piattaforma.
+
+* [CAN Communication Example](examples/CAN_Communication_Example.cpp)
+
+  * Configurazione del controller TWAI dell'ESP32
+  * Trasmissione e ricezione di frame CAN
+  * Gestione di identificativi CAN standard ed extended
+
+* [OBD-II Request Example](examples/OBD2_Request_Example.cpp)
+
+  * Richieste OBD-II Mode 01
+  * Costruzione delle richieste tramite PID
+  * Trasmissione CAN tramite TWAI
+
+* [DTC Decoding Example](examples/DTC_Decoding_Example.cpp)
+
+  * Elaborazione dei dati diagnostici ricevuti
+  * Identificazione della categoria del DTC
+  * Conversione dei dati grezzi in codici DTC leggibili
+
+> Gli esempi sono versioni semplificate e indipendenti, pubblicate per documentare alcuni degli approcci tecnici utilizzati nel progetto. Il firmware completo e la logica applicativa proprietaria non sono inclusi nel repository pubblico.
+
+
 ## Funzionalità avanzate
 
 Il progetto integra diverse funzionalità sviluppate per migliorare la flessibilità del sistema durante le attività di sviluppo, test e diagnostica.
