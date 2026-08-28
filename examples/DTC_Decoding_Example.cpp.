@@ -1,1 +1,82 @@
+```cpp
+/*
+ * DTC Decoding Example
+ * OBD-II / CAN Bus
+ *
+ * Demonstrates:
+ * - Decoding two-byte OBD-II DTC data
+ * - Identifying the DTC category
+ * - Converting raw CAN data into a readable DTC code
+ *
+ * This is a simplified example for educational and
+ * portfolio purposes.
+ */
+
+#include <Arduino.h>
+
+String decodeDTC(uint8_t byteA, uint8_t byteB)
+{
+    const char prefixes[] = {'P', 'C', 'B', 'U'};
+
+    // First two bits identify the DTC category
+    uint8_t category = (byteA >> 6) & 0x03;
+
+    // Remaining bits form the first DTC digit
+    uint8_t digit1 = (byteA >> 4) & 0x03;
+
+    // Lower four bits form the second digit
+    uint8_t digit2 = byteA & 0x0F;
+
+    // Second byte contains the last two hexadecimal digits
+    uint8_t digit3 = (byteB >> 4) & 0x0F;
+    uint8_t digit4 = byteB & 0x0F;
+
+    String dtc;
+
+    dtc += prefixes[category];
+    dtc += String(digit1);
+    dtc += String(digit2, HEX);
+    dtc += String(digit3, HEX);
+    dtc += String(digit4, HEX);
+
+    dtc.toUpperCase();
+
+    return dtc;
+}
+
+void printDTC(uint8_t byteA, uint8_t byteB)
+{
+    String dtc = decodeDTC(byteA, byteB);
+
+    Serial.print("Decoded DTC: ");
+    Serial.println(dtc);
+}
+
+void setup()
+{
+    Serial.begin(115200);
+
+    delay(1000);
+
+    Serial.println();
+    Serial.println("OBD-II DTC Decoding Example");
+
+    /*
+     * Example raw DTC data.
+     *
+     * In a real diagnostic system, these bytes would
+     * come from an OBD-II diagnostic response.
+     */
+
+    uint8_t byteA = 0x01;
+    uint8_t byteB = 0x00;
+
+    printDTC(byteA, byteB);
+}
+
+void loop()
+{
+    // Example runs once during setup.
+}
+```
 
