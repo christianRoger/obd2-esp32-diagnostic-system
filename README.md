@@ -313,3 +313,22 @@ Le immagini seguenti mostrano alcune delle principali schermate dell'interfaccia
 ### Report diagnostico
 
 ![Report diagnostico](images/diagnostic-report.jpg)
+
+---
+
+
+## Stato del progetto
+
+**Stato:** Prototipo funzionale
+
+Il sistema è stato sviluppato e testato come prototipo embedded funzionante, integrando hardware, firmware, comunicazione CAN, diagnostica automotive, gestione locale dei dati e interfaccia Web.
+
+Il progetto è in continua evoluzione, con futuri sviluppi orientati all'ampliamento della compatibilità con diversi modelli di veicolo, all'estensione delle funzionalità diagnostiche e al miglioramento degli strumenti di analisi del CAN Bus.
+
+---
+
+## Autore
+
+**Christian Roger**
+
+Embedded Systems · Elettronica · Diagnostica Automotive · ESP32 · CAN Bus · Sviluppo Firmware
